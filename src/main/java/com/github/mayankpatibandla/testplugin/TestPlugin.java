@@ -1,5 +1,6 @@
 package com.github.mayankpatibandla.testplugin;
 
+import com.github.mayankpatibandla.testplugin.listeners.JoinLeaveListener;
 import com.github.mayankpatibandla.testplugin.listeners.PlayerMoveListener;
 import com.github.mayankpatibandla.testplugin.listeners.ShearSheepListener;
 import com.github.mayankpatibandla.testplugin.listeners.XPBottleBreakListener;
@@ -14,6 +15,7 @@ public final class TestPlugin extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new XPBottleBreakListener(), this);
         getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
+        getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
 //        getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
     }
 
