@@ -1,31 +1,20 @@
 package com.github.mayankpatibandla.testplugin;
 
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerBedEnterEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
+import com.github.mayankpatibandla.testplugin.listeners.PlayerMoveListener;
+import com.github.mayankpatibandla.testplugin.listeners.ShearSheepListener;
+import com.github.mayankpatibandla.testplugin.listeners.XPBottleBreakListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class TestPlugin extends JavaPlugin implements Listener {
+public final class TestPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
         // Plugin startup logic
         System.out.println("Test Plugin has started!");
 
-        getServer().getPluginManager().registerEvents(this, this);
-    }
-
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e) {
-        e.setJoinMessage(e.getPlayer().getName() + " joined the server!");
-    }
-
-    @EventHandler
-    public void onEnterBed(PlayerBedEnterEvent e) {
-        Player player = e.getPlayer();
-        player.sendMessage("You entered a bed");
+        getServer().getPluginManager().registerEvents(new XPBottleBreakListener(), this);
+        getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
+//        getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
     }
 
     @Override
