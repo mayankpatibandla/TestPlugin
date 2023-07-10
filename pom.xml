@@ -41,6 +41,9 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <outputFile>
+                                C:\Projects\Minecraft\Spigot Test\Server\plugins\TestPlugin-${project.version}.jar
+                            </outputFile>
                         </configuration>
                     </execution>
                 </executions>
