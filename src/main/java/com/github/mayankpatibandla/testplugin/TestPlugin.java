@@ -1,7 +1,9 @@
 package com.github.mayankpatibandla.testplugin;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +20,12 @@ public final class TestPlugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         event.setJoinMessage(event.getPlayer().getName() + " joined the server!");
+    }
+
+    @EventHandler
+    public void onEnterBed(PlayerBedEnterEvent event) {
+        Player player = event.getPlayer();
+        player.sendMessage("You entered a bed");
     }
 
     @Override
