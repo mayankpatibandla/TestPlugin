@@ -18,13 +18,13 @@ public final class TestPlugin extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        event.setJoinMessage(event.getPlayer().getName() + " joined the server!");
+    public void onPlayerJoin(PlayerJoinEvent e) {
+        e.setJoinMessage(e.getPlayer().getName() + " joined the server!");
     }
 
     @EventHandler
-    public void onEnterBed(PlayerBedEnterEvent event) {
-        Player player = event.getPlayer();
+    public void onEnterBed(PlayerBedEnterEvent e) {
+        Player player = e.getPlayer();
         player.sendMessage("You entered a bed");
     }
 
