@@ -10,7 +10,13 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 public class XPBottleBreakListener implements Listener {
 
     @EventHandler
-    public void onXPBottleBreak(ProjectileHitEvent e) {
+    public void onXPBottleBreak(ExpBottleEvent e) {
+        e.setExperience(0);
+        e.setShowEffect(false);
+    }
+
+    @EventHandler
+    public void onHit(ProjectileHitEvent e) {
         if (!(e.getEntity() instanceof ThrownExpBottle)) return;
         Block block = e.getHitBlock();
         if (block == null) return;
