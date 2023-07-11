@@ -23,6 +23,6 @@ commands:
       - invincible
   feed:
     description: "Fills the player's hunger bar"
-    usage: /<command> <player.
+    usage: /<command> <player>
     permission: ${project.artifactId}.feed
     permission-message: Insufficient permission
