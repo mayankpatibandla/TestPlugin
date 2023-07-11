@@ -13,16 +13,16 @@ permissions:
 
 commands:
   slime:
-    description: Summons a slime at the sender's location
-    usage: /<command>
+    description: "Summons a slime of specified size (default: 3) at the sender's location"
+    usage: /<command> [size]
   god:
-    description: Toggles the player's god mode
+    description: "Toggles the player's god mode"
     usage: /<command>
     aliases:
       - godmode
       - invincible
   feed:
-    description: Fills the player's hunger bar
-    usage: /<command>
+    description: "Fills the player's hunger bar"
+    usage: /<command> <player.
     permission: ${project.artifactId}.feed
     permission-message: Insufficient permission
