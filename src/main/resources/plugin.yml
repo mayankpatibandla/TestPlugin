@@ -2,6 +2,11 @@ name: TestPlugin
 version: '${project.version}'
 main: com.github.mayankpatibandla.testplugin.TestPlugin
 api-version: '1.20'
-authors: [Mayank Patibandla (xTigr)]
+authors: [ Mayank Patibandla (xTigr) ]
 description: Just messing around with Spigot
 website: https://github.com/mayankpatibandla/
+
+commands:
+  slime:
+    description: Summons a slime at the sender's location
+    usage: /<command>
