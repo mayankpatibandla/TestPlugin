@@ -9,6 +9,7 @@ import com.github.mayankpatibandla.testplugin.listeners.XPBottleBreakListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TestPlugin extends JavaPlugin {
+    private static TestPlugin plugin;
 
     @Override
     public void onEnable() {
@@ -35,5 +36,8 @@ public final class TestPlugin extends JavaPlugin {
         // Plugin shutdown logic
         System.out.println(getConfig().getString("StopMessage"));
     }
+
+    public static TestPlugin getPlugin() {
+        return plugin;
     }
 }
