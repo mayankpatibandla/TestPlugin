@@ -10,3 +10,9 @@ commands:
   slime:
     description: Summons a slime at the sender's location
     usage: /<command>
+  god:
+    description: Toggles the player's god mode
+    usage: /<command>
+    aliases:
+      - godmode
+      - invincible
