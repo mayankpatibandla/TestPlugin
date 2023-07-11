@@ -1,5 +1,6 @@
 package com.github.mayankpatibandla.testplugin;
 
+import com.github.mayankpatibandla.testplugin.commands.FeedCommand;
 import com.github.mayankpatibandla.testplugin.commands.GodCommand;
 import com.github.mayankpatibandla.testplugin.commands.SlimeCommand;
 import com.github.mayankpatibandla.testplugin.listeners.JoinLeaveListener;
@@ -12,10 +13,16 @@ public final class TestPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        System.out.println("Test Plugin has started!");
+        plugin = this;
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
+        System.out.println(getConfig().getString("StartMessage"));
 
         getCommand("slime").setExecutor(new SlimeCommand());
         getCommand("god").setExecutor(new GodCommand());
+        getCommand("feed").setExecutor(new FeedCommand());
 
         getServer().getPluginManager().registerEvents(new XPBottleBreakListener(), this);
         getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
@@ -26,6 +33,7 @@ public final class TestPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        System.out.println("Test Plugin has stopped!");
+        System.out.println(getConfig().getString("StopMessage"));
+    }
     }
 }

@@ -6,6 +6,11 @@ authors: [ Mayank Patibandla (xTigr) ]
 description: Just messing around with Spigot
 website: https://github.com/mayankpatibandla/
 
+permissions:
+  ${project.artifactId}.feed:
+    description: Used by the feed command
+    default: op
+
 commands:
   slime:
     description: Summons a slime at the sender's location
@@ -16,3 +21,8 @@ commands:
     aliases:
       - godmode
       - invincible
+  feed:
+    description: Fills the player's hunger bar
+    usage: /<command>
+    permission: ${project.artifactId}.feed
+    permission-message: Insufficient permission
