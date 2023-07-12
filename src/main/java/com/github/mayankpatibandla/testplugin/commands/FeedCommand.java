@@ -33,6 +33,8 @@ public class FeedCommand implements CommandExecutor {
         for (Entity target : targets) {
             if (target instanceof Player p) {
                 p.setFoodLevel(20);
+                p.setSaturation(20);
+
                 n++;
 
                 p.sendMessage(ChatColor.YELLOW + "Your hunger was filled" + (sender instanceof Player ? " by " + ((Player) sender).getDisplayName() : ""));
