@@ -17,8 +17,8 @@ public class FeedCommand implements CommandExecutor {
 
         if (args.length != 0) { // Target Selector
             targets = Bukkit.selectEntities(sender, args[0]);
-        } else if (sender instanceof Player) { // Player sends command with no argument
-            targets = List.of((Player) sender);
+        } else if (sender instanceof Player p) { // Player sends command with no argument
+            targets = List.of(p);
         } else { // Non-player sends command with no argument
             sender.sendMessage(ChatColor.RED + "A player must be targeted");
             return true;
@@ -27,6 +27,7 @@ public class FeedCommand implements CommandExecutor {
         // Player not found
         if (targets.size() == 0) {
             sender.sendMessage(ChatColor.RED + "The targeted player(s) could not be found");
+            return true;
         }
 
         int n = 0;
@@ -37,7 +38,7 @@ public class FeedCommand implements CommandExecutor {
 
                 n++;
 
-                p.sendMessage(ChatColor.YELLOW + "Your hunger was filled" + (sender instanceof Player ? " by " + ((Player) sender).getDisplayName() : ""));
+                p.sendMessage(ChatColor.YELLOW + "Your hunger was filled" + (sender instanceof Player pSender ? " by " + pSender.getDisplayName() : ""));
             }
         }
 
