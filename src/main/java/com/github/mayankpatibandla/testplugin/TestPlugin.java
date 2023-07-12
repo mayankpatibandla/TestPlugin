@@ -16,15 +16,19 @@ public final class TestPlugin extends JavaPlugin {
         // Plugin startup logic
         plugin = this;
 
+        // config.yml
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
+        // Start message
         System.out.println(getConfig().getString("StartMessage"));
 
+        // Commands
         getCommand("slime").setExecutor(new SlimeCommand());
         getCommand("god").setExecutor(new GodCommand());
         getCommand("feed").setExecutor(new FeedCommand());
 
+        // Event listeners
         getServer().getPluginManager().registerEvents(new XPBottleBreakListener(), this);
         getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
@@ -34,6 +38,8 @@ public final class TestPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+
+        // Stop message
         System.out.println(getConfig().getString("StopMessage"));
     }
 
