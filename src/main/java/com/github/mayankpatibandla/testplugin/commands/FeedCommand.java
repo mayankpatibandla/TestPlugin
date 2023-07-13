@@ -3,14 +3,16 @@ package com.github.mayankpatibandla.testplugin.commands;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class FeedCommand implements CommandExecutor {
+public class FeedCommand implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         List<Entity> targets;
@@ -48,5 +50,22 @@ public class FeedCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.GREEN + "Successfully filled the hunger of " + n + " player(s)");
         }
         return true;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
+        if (args.length == 1) {
+            List<String> names = new ArrayList<>();
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                names.add(p.getName());
+            }
+            return names;
+        } else if (args.length == 2) {
+            List<String> arguments = new ArrayList<>();
+            arguments.add("test1");
+            arguments.add("test2");
+            return arguments;
+        }
+        return Collections.emptyList();
     }
 }
