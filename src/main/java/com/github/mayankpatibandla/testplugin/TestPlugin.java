@@ -12,6 +12,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class TestPlugin extends JavaPlugin {
     private static TestPlugin plugin;
 
+    public static TestPlugin getPlugin() {
+        return plugin;
+    }
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -34,7 +38,7 @@ public final class TestPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new XPBottleBreakListener(), this);
         getServer().getPluginManager().registerEvents(new ShearSheepListener(), this);
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
-//        getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
+        //        getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
     }
 
     @Override
@@ -43,9 +47,5 @@ public final class TestPlugin extends JavaPlugin {
 
         // Stop message
         System.out.println(getConfig().getString("StopMessage"));
-    }
-
-    public static TestPlugin getPlugin() {
-        return plugin;
     }
 }

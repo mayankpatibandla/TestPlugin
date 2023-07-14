@@ -40,7 +40,8 @@ public class FeedCommand implements TabExecutor {
 
                 n++;
 
-                p.sendMessage(ChatColor.YELLOW + "Your hunger was filled" + (sender instanceof Player pSender ? " by " + pSender.getDisplayName() : ""));
+                p.sendMessage(ChatColor.YELLOW + "Your hunger was filled" +
+                              (sender instanceof Player pSender ? " by " + pSender.getDisplayName() : ""));
             }
         }
 

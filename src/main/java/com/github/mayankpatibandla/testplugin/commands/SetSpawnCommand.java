@@ -18,7 +18,6 @@ public class SetSpawnCommand implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player p) {
-
             Location location = new Location(Bukkit.getWorld(p.getUniqueId()),
                                              Coordinate.parseCoordinate(args[0], p.getLocation().getX()),
                                              Coordinate.parseCoordinate(args[1], p.getLocation().getY()),

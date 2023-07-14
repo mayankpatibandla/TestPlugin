@@ -17,9 +17,13 @@ public class XPBottleBreakListener implements Listener {
 
     @EventHandler
     public void onHit(ProjectileHitEvent e) {
-        if (!(e.getEntity() instanceof ThrownExpBottle)) return;
+        if (!(e.getEntity() instanceof ThrownExpBottle)) {
+            return;
+        }
         Block block = e.getHitBlock();
-        if (block == null) return;
+        if (block == null) {
+            return;
+        }
         block.breakNaturally();
     }
 }

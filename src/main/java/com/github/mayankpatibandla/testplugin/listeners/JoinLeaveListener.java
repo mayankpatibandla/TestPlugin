@@ -12,13 +12,15 @@ public class JoinLeaveListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
 
-        e.setJoinMessage(ChatColor.GOLD + "[Admin] " + ChatColor.RED + player.getDisplayName() + ChatColor.WHITE + " has joined the server :p");
+        e.setJoinMessage(ChatColor.GOLD + "[Admin] " + ChatColor.RED + player.getDisplayName() + ChatColor.WHITE +
+                         " has joined the server :p");
     }
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {
         Player player = e.getPlayer();
 
-        e.setQuitMessage(ChatColor.GOLD + "[Admin] " + ChatColor.RED + player.getDisplayName() + ChatColor.WHITE + " has left the server :3");
+        e.setQuitMessage(ChatColor.GOLD + "[Admin] " + ChatColor.RED + player.getDisplayName() + ChatColor.WHITE +
+                         " has left the server :3");
     }
 }
