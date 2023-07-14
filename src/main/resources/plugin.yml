@@ -26,3 +26,6 @@ commands:
     usage: /<command> <player>
     permission: ${project.artifactId}.feed
     permission-message: Insufficient permission
+  setspawn:
+    description: "Sets the location of spawn to be used with /spawn"
+    usage: /<command> <x> <y> <z>

@@ -1,2 +1,4 @@
 StartMessage: 'Test Plugin has started!'
 StopMessage: 'Test Plugin has stopped!'
+
+spawn:

@@ -2,6 +2,7 @@ package com.github.mayankpatibandla.testplugin;
 
 import com.github.mayankpatibandla.testplugin.commands.FeedCommand;
 import com.github.mayankpatibandla.testplugin.commands.GodCommand;
+import com.github.mayankpatibandla.testplugin.commands.SetSpawnCommand;
 import com.github.mayankpatibandla.testplugin.commands.SlimeCommand;
 import com.github.mayankpatibandla.testplugin.listeners.JoinLeaveListener;
 import com.github.mayankpatibandla.testplugin.listeners.ShearSheepListener;
@@ -27,6 +28,7 @@ public final class TestPlugin extends JavaPlugin {
         getCommand("slime").setExecutor(new SlimeCommand());
         getCommand("god").setExecutor(new GodCommand());
         getCommand("feed").setExecutor(new FeedCommand());
+        getCommand("setspawn").setExecutor(new SetSpawnCommand());
 
         // Event listeners
         getServer().getPluginManager().registerEvents(new XPBottleBreakListener(), this);
