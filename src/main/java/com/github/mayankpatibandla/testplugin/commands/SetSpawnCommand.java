@@ -33,7 +33,8 @@ public class SetSpawnCommand implements TabExecutor {
         if (sender instanceof Player p) {
             Location location = p.getLocation();
             String[] locationStrings =
-                    {String.valueOf(location.getX()), String.valueOf(location.getY()), String.valueOf(location.getZ())};
+                    {Coordinate.format.format(location.getX()), Coordinate.format.format(location.getY()),
+                     Coordinate.format.format(location.getZ())};
 
             List<String> arguments = new ArrayList<>();
 
